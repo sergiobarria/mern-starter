@@ -1,0 +1,11 @@
+{
+  "name": "mern-starter",
+  "version": "1.0.0",
+  "description": "MERN Starter",
+  "scripts": {
+    "dev:server": "pnpm --filter server"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT"
+}
