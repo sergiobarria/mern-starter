@@ -1,9 +1,17 @@
 {
   "name": "mern-starter",
   "version": "1.0.0",
-  "description": "MERN Starter",
+  "description": "",
+  "workspaces": [
+    "server"
+  ],
   "scripts": {
-    "dev:server": "pnpm --filter server"
+    "dev:server": "npm run dev --prefix server",
+    "build:server": "npm run build --prefix server",
+    "start:server": "npm run start --prefix server",
+    "typecheck:server": "npm run typecheck --prefix server",
+    "lint:server": "npm run lint --prefix server",
+    "lint-fix:server": "npm run lint:fix --prefix server"
   },
   "keywords": [],
   "author": "",

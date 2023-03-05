@@ -10,8 +10,8 @@ const startServer = async (): Promise<void> => {
   server = http.createServer(app)
 
   try {
-    server.listen(PORT, '0.0.0.0', () => {
-      console.log(`Server listening on port ${PORT}`)
+    server.listen(PORT, () => {
+      console.log(`Server is listening on port ${PORT}`)
     })
   } catch (error) {
     console.error(error)
