@@ -3,6 +3,7 @@ import * as http from 'http'
 import chalk from 'chalk'
 
 import { app } from './app'
+import { connectToMongoDB } from './shared/db/mongo'
 import { logger } from './shared/utils/logger'
 
 const PORT = Number(process.env.PORT ?? 3000)
@@ -12,6 +13,9 @@ let server: http.Server
 
 const startServer = async (): Promise<void> => {
   server = http.createServer(app)
+
+  // Connect to MongoDB
+  await connectToMongoDB()
 
   try {
     server.listen(PORT, HOST, () => {
