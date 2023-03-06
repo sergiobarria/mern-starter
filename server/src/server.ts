@@ -1,6 +1,9 @@
 import * as http from 'http'
 
+import chalk from 'chalk'
+
 import { app } from './app'
+import { logger } from './shared/utils/logger'
 
 const PORT = Number(process.env.PORT ?? 3000)
 const HOST = '0.0.0.0'
@@ -12,10 +15,10 @@ const startServer = async (): Promise<void> => {
 
   try {
     server.listen(PORT, HOST, () => {
-      console.log(`Server is listening on port ${PORT}`)
+      logger.info(chalk.greenBright(`Server is running on http://${HOST}:${PORT}`))
     })
   } catch (error) {
-    console.error(error)
+    logger.error(error)
   }
 }
 
